@@ -33,7 +33,6 @@ class GFG
 //User function Template for Java
 
 class Solution{
-    
     boolean[] vis;
     int count = 0;
     
@@ -51,18 +50,16 @@ class Solution{
     }
     public int countVertex(int N, int[][] edges){
         // code here
-        // ArrayList<Integer> adj[] = new ArrayList<>();
         vis = new boolean[N+1];
         List<List<Integer>> adj = new ArrayList<>();
-
         for(int i=0; i<N+1; i++){
             adj.add(new ArrayList<>());
         }
-
         for(int [] edge: edges){
             adj.get(edge[0]).add(edge[1]);
             adj.get(edge[1]).add(edge[0]);
         }
+        
         dfs(adj, 1);
         return count;
     }
